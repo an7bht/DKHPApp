@@ -236,8 +236,8 @@ router.get('/laylhp/:malhp?',function(req,res,next){
     });
 });
 // Lấy ds Lớp học phần cho sinh viên theo mã môn học phần:
-router.get('/laydslhp/:mamhp?',function(req,res,next){
-    DSLopHocPhan.getDSLopHocPhan(req.params.mamhp,function(err,rows){
+router.get('/laydslhp/:mamhp?/:nam?/:hocky?',function(req,res,next){
+    DSLopHocPhan.getDSLopHocPhan(req.params.mamhp,req.params.nam,req.params.hocky, function(err,rows){
         if(err){
             res.json(err);
         }
